@@ -130,7 +130,7 @@ section {
     margin-bottom: -6rem; 
     z-index: 2;
     align-self: flex-start; 
-    margin-left: 10%;
+    margin-left: 8%;
     justify-content: left;
     color: var(--accent);
 }
@@ -345,7 +345,7 @@ section {
 
 .social-item:hover {
     padding-left: 10px;
-    color: #c5a059; /* Warna emas/cokelatmu */
+    color: #c5a059; 
 }
 
 /* Form Floating Label Effect */
@@ -395,7 +395,6 @@ section {
     border-bottom: 1px solid #c5a059;
 }
 
-/* Memastikan label tidak menabrak teks error */
 #error-msg {
     font-family: var(--font-sans);
     letter-spacing: 1px;
@@ -403,7 +402,6 @@ section {
     font-weight: 600;
 }
 
-/* Responsivitas untuk mobile (karena kita baru nambah viewport) */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
