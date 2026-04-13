@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Iqlima Juliana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">IQ.</a></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h1 class="contact-title">Let's <br><em>connect.</em></h1>
+                <div class="social-links">
+                    <a href="#" class="social-item">
+                        <span class="social-label">Instagram</span>
+                        <span class="social-handle">@iqlmjlna</span>
+                    </a>
+                    <a href="#" class="social-item">
+                        <span class="social-label">GitHub</span>
+                        <span class="social-handle">iqlimajuliana</span>
+                    </a>
+                    <p class="location-tag">Based in Lampung, Indonesia</p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <p class="form-sub">SEND MESSAGE</p>
+
+                <form class="contact-form" id="contactForm" action="mailto:iqlimajuliana@gmail.com" method="post" enctype="text/plain">
+                    <div class="input-group">
+                        <input type="text" id="name" name="Nama" required>
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="Email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" name="Pesan" rows="4" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+
+                    <p id="error-msg" style="color: #ff6b6b; font-size: 0.8rem; margin-bottom: 15px; min-height: 1.2em; font-family: sans-serif;"></p>
+                    
+                    <button type="submit" class="btn-send" id="submitBtn">
+                        <span>SEND MESSAGE</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+/* --- GLOBAL STYLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-dark: #0a0a0a;
+    --text-light: #f5f5f5;
+    --accent: #c5a059; /* Muted Gold */
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Inter', sans-serif;
+    --transition-smooth: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 300;
+}
+
+/* LOGO & NAV */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    mix-blend-mode: difference; /* Efek teks berubah warna pas backgroundny beda */
+}
+
+.logo a {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--text-light);
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    opacity: 1;
+    letter-spacing: 4px;
+    color: var(--accent);
+}
+
+/* GRID & SECTION */
+section {
+    padding: 140px 10% 100px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin-bottom: 80px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+    padding-bottom: 20px;
+}
+
+/* HOME */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* biar gk scroll kl font ny kegedean */
+}
+
+.main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.65; /* biar teksnya deket */
+}
+
+.main-title span {
+    font-family: var(--font-serif); 
+    font-style: italic;
+    font-size: clamp(8rem, 25vw, 18rem); 
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    display: block;
+}
+
+.main-title .bottom {
+    margin-top: -0.3em; 
+    margin-left: 2.9em; 
+}
+
+.hero-sub-title {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: -6rem; 
+    z-index: 2;
+    align-self: flex-start; 
+    margin-left: 10%;
+    justify-content: left;
+    color: var(--accent);
+}
+
+/* ABOUT PAGE */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: var(--transition-smooth);
+}
+
+.about-image-wrapper:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.about-text h3 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: rgba(245, 245, 245, 0.8);
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+/* SKILLS PAGE */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.skill-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.skill-item:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+    filter: grayscale(100%) brightness(1.5);
+}
+
+.skill-icon img {
+    width: 100%; height: 100%; object-fit: contain;
+}
+
+.skill-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.skill-info p {
+    font-size: 0.9rem;
+    color: rgba(245, 245, 245, 0.6);
+}
+
+/* PROJECT PAGE  */
+.project-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.project-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.project-section.reverse {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.project-section.reverse .single-project-img {
+    grid-column: 2;
+}
+
+.project-section.reverse .project-details {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.single-project-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.single-project-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(100%);
+    transition: var(--transition-smooth);
+}
+
+.project-section:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+.project-details h2 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.project-meta {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+/* CONTACT PAGE */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.contact-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.05);
+    text-decoration: none;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+.social-item:hover {
+    color: var(--accent);
+    padding-left: 10px;
+}
+
+.social-icon { width: 30px; height: 30px; filter: invert(1); }
+.social-icon img { width: 100%; height: 100%; object-fit: contain; }
+.social-info h3 { font-size: 1.1rem; font-weight: 600; }
+.social-info p { font-size: 0.9rem; opacity: 0.6; }
+
+/* CONTACT FORM */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding-top: 100px;
+    align-items: start;
+}
+
+.contact-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+    margin-bottom: 50px;
+}
+
+/* Social Links Styling */
+.social-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-item:hover {
+    padding-left: 10px;
+    color: #c5a059; /* Warna emas/cokelatmu */
+}
+
+/* Form Floating Label Effect */
+.input-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 0;
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* Animasi saat input diklik atau diisi */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+
+    top: -20px;
+    font-size: 0.8rem;
+    color: #c5a059;
+}
+.input-group input:focus:invalid,
+.input-group textarea:focus:invalid {
+    border-bottom: 1px solid #ff6b6b;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-bottom: 1px solid #c5a059;
+}
+
+/* Memastikan label tidak menabrak teks error */
+#error-msg {
+    font-family: var(--font-sans);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Responsivitas untuk mobile (karena kita baru nambah viewport) */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+    
+    .contact-title {
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+}
+
+/* Button Styling */
+.btn-send {
+    width: 100%;
+    background: #c5a059;
+    color: black;
+    border: none;
+    padding: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-send:hover {
+    background: white;
+    transform: translateY(-5px);
+}
+
+.location-tag {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
